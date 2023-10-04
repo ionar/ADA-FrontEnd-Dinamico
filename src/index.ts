@@ -3,15 +3,26 @@ class Churrascometro {
     // Salvar os campos preenchidos no localStorage
     // Avancar para a proxima tela
 
+    // Localizando os campos
+    nameField: HTMLInputElement = document.getElementById("inputNome") as HTMLInputElement;
+    emailField: HTMLInputElement = document.getElementById("inputEmail") as HTMLInputElement;
+    cepField: HTMLInputElement = document.getElementById("inputCep") as HTMLInputElement;
+    promocionalCheckBox: HTMLElement = document.getElementById("inputPromocional");
+
     constructor() {
         this.checkboxSetChecked();
+        this.saveFields();
     }
 
     checkboxSetChecked() {
         // Metodo para marcar o checkbox de consentimento.
-        let checkBoxPromocional = document.getElementById("inputPromocional");
-        checkBoxPromocional.setAttribute("checked", "checked");
+        this.promocionalCheckBox.setAttribute("checked", "checked");
         //console.log(checkBoxPromocional);
+    }
+
+    saveFields() {
+        console.log(this.nameField);
+        this.nameField.value = "123";
     }
 }
 
